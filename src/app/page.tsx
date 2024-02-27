@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 import moment from 'moment';
 
-export default function page() {
+export default function Page() {
     const router = useRouter();
     const [blogs, setBlogs] = useState([]);
 
