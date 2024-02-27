@@ -83,7 +83,7 @@ export default function Page() {
             className="mt-1 p-2 w-full border-2 shadow-md rounded-md min-h-80"
             ></textarea>
         </div>
-        <button type="submit" className=" border-2 shadow-md rounded-lg mt-4 focus:outline-none focus:border-gray-600" onClick={onPost} disabled={loading}>
+        <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white p-1 rounded" onClick={onPost} disabled={loading}>
                 {loading ? "Loading..." : "Post"}
             </button>
       </form>

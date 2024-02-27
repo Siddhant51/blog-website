@@ -23,8 +23,8 @@ export default function Page() {
             const response = await axios.post("/api/user/login", user);
             console.log("Login success", response.data);
             toast.success(response.data.message);
-            localStorage.setItem("loggedIn", response.data.id)
-            setLoggedIn(true)
+            localStorage.setItem("loggedIn", "true")
+            setLoggedIn("true")
             router.push("/dashboard")
         } catch (error:any) {
             console.log("Login failed", error.message);

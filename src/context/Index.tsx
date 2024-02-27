@@ -7,7 +7,7 @@ const AppContext = createContext<any>(undefined);
 export function AppWrapper({ children } : {
 children: React.ReactNode;
 }) {
-const [loggedIn, setLoggedIn] = useState(false)
+const [loggedIn, setLoggedIn] = useState("")
 
 return (
     <AppContext.Provider value={{

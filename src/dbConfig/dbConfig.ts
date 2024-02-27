@@ -1,9 +1,8 @@
 import mongoose from 'mongoose';
-const MONGO_URL = "mongodb+srv://Siddhant:Siddhant@cluster0.s36geb7.mongodb.net/blog-website";
 
 export async function connect() {
     try {
-        mongoose.connect(MONGO_URL);
+        mongoose.connect(process.env.MONGO_URL!);
         const connection = mongoose.connection;
 
         connection.on('error', (err) => {

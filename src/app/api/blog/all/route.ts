@@ -1,10 +1,10 @@
 import Blog from "@/models/blogModel";
-import { NextResponse } from "next/server";
+import { NextRequest ,NextResponse } from "next/server";
 import { connect } from "@/dbConfig/dbConfig";
 
-connect();
 
-export async function GET() {
+export async function GET(request: NextRequest) {
+  connect();
   try {
     // Use populate to include author information from the User model
     const blogs = await Blog.find().populate('author');

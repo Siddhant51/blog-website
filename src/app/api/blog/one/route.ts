@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
   try {
     const reqBody = await request.json();
     const { slicedId } = reqBody;
-
+    
     const blog = await Blog.findOne({_id: slicedId}).populate("author");
 
     return NextResponse.json({

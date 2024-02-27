@@ -23,7 +23,7 @@ export default function NavBar() {
             await axios.get('/api/user/logout')
             toast.success('Logout successful')
             localStorage.removeItem("loggedIn")
-            setLoggedIn(false)
+            setLoggedIn("")
             router.push('/login')
         } catch (error:any) {
             console.log(error.message);

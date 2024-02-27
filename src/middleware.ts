@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export function middleware(request: NextRequest) {
+  
   const path = request.nextUrl.pathname;
-  const publicPaths = ['/', '/login', '/signup', '/blog/'];
+  const publicPaths = ['' ,'/', '/login', '/signup', '/blog/'];
   const isPublicPath = publicPaths.some(publicPath => path.startsWith(publicPath));
   const token = request.cookies.get('token')?.value || '';
 
