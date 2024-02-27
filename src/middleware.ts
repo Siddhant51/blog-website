@@ -1,25 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
- 
 
 export function middleware(request: NextRequest) {
-  const path = request.nextUrl.pathname
-
-  const isPublicPath = path === '/login' || path === '/signup'
-
-  const token = request.cookies.get('token')?.value || ''
-
-  if(isPublicPath && token) {
-    return NextResponse.redirect(new URL('/', request.nextUrl))
-  }
+  const path = request.nextUrl.pathname;
+  const publicPaths = ['/', '/login', '/signup', '/blog/'];
+  const isPublicPath = publicPaths.some(publicPath => path.startsWith(publicPath));
+  const token = request.cookies.get('token')?.value || '';
 
   if (!isPublicPath && !token) {
-    return NextResponse.redirect(new URL('/login', request.nextUrl))
+    // Redirect to login page if it's not a public path and there's no token
+    return NextResponse.redirect(new URL('/login', request.nextUrl).toString());
   }
-    
 }
 
- 
-// See "Matching Paths" below to learn more
+// Matcher paths
 export const config = {
   matcher: [
     '/',
@@ -28,5 +21,5 @@ export const config = {
     '/dashboard',
     '/login',
     '/signup',
-  ]
-}
+  ],
+};

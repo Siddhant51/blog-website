@@ -20,9 +20,7 @@ const userSchema = new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Blog', // Reference to the Blog model
         }
-    ],
-    verifyToken: {type: String},
-    verifyTokenExpiry: {type: Date},
+    ]
 });
 
 const User = mongoose.models.User || mongoose.model("User", userSchema);
