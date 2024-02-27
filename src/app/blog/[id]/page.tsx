@@ -49,7 +49,7 @@ export default function Page({ params }: any) {
 
   return (
     <main>
-      <div className='body w-10/12 p-4 lg:w-7/12'>
+      <div className=' body w-10/12 p-4 lg:w-7/12'>
         <ProfilePic userData={blog.author}/>
         <div className=' text-right mt-6'>
         <span className=' text-gray-500 border-2 p-1 rounded-lg'>Category: {blog.category}</span>

@@ -30,12 +30,15 @@ export default function Page() {
   };
 
   return (
-    <form className="flex flex-col space-y-1">
+    <main>
+    <div className="sub flex items-center justify-center">
+
+    <form className="flex flex-col space-y-4 border-2 p-5 shadow-lg rounded-lg">
       <Toaster
         position="top-right"
         reverseOrder={false}
-      />
-      <h1 className="text-lg font-semibold">Signup</h1>
+        />
+      <h1 className="text-2xl text-center font-semibold pb-5">Signup</h1>
       <label>
         Username:
         <input
@@ -44,7 +47,7 @@ export default function Page() {
           value={user.username}
           onChange={(e) => setUser({ ...user, username: e.target.value })}
           required
-        />
+          />
       </label>
       <label>
         Email:
@@ -54,7 +57,7 @@ export default function Page() {
           value={user.email}
           onChange={(e) => setUser({ ...user, email: e.target.value })}
           required
-        />
+          />
       </label>
       <label>
         Password:
@@ -64,17 +67,19 @@ export default function Page() {
           value={user.password}
           onChange={(e) => setUser({ ...user, password: e.target.value })}
           required
-        />
+          />
       </label>
       <button
         type="submit"
         onClick={onSignup}
-        className="border-2 rounded-lg mb-4 focus:outline-none focus:border-gray-600"
+        className="bg-blue-500 hover:bg-blue-700 text-white p-1 rounded"
         disabled={loading}
-      >
+        >
         {loading ? "Loading..." : "Signup"}
       </button>
       <Link href="/login">Visit login page</Link>
     </form>
+      </div>
+      </main>
   );
 }

@@ -36,9 +36,10 @@ export default function Page() {
 
     return (
         <main>
+        <div className=" sub flex items-center justify-center">
 
-        <form className=' flex flex-col space-y-1'>
-            <h1 className="text-lg font-semibold">Login</h1>
+        <form className=' flex flex-col space-y-4 border-2 p-5 shadow-lg rounded-lg'>
+            <h1 className="text-2xl text-center font-semibold pb-5">Login</h1>
             <label>
                 Email:
                 <input
@@ -59,11 +60,12 @@ export default function Page() {
                     required
                     />
             </label>
-            <button type="submit" className=" border-2 rounded-lg mb-4 focus:outline-none focus:border-gray-600" onClick={onLogin} disabled={loading}>
+            <button type="submit" className=" bg-blue-500 hover:bg-blue-700 text-white p-1 rounded" onClick={onLogin} disabled={loading}>
                 {loading ? "Loading..." : "Login"}
             </button>
             <Link href="/signup">Visit signup page</Link>
         </form>
+        </div>
     </main>
     );
 }

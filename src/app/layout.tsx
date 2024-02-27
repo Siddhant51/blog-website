@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "./components/NavBar";
 import { AppWrapper } from "@/context/Index";
+import Footer from "./components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,8 +21,9 @@ export default function RootLayout({
     <html lang="en">
       <body suppressHydrationWarning={true}>
         <AppWrapper>
-          <NavBar />
-          {children}
+            <NavBar />
+            {children}
+            <Footer />
         </AppWrapper>
       </body>
     </html>
