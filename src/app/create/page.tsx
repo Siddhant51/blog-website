@@ -91,9 +91,8 @@ export default function Page() {
       {/* Blog Content Preview */}
       <div className="mt-3 lg:w-5/12">
         <h2 className="text-xl font-semibold mb-2">Preview</h2>
-        <div>
-        {/* <p>Category: {blog.category}</p> */}
-        <ReactMarkdown className="markdown">{blog.content}</ReactMarkdown>
+        <div className="markdown">
+          <ReactMarkdown>{blog.content}</ReactMarkdown>
         </div>
       </div>
     </div>
