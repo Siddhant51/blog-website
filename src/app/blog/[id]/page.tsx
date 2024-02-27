@@ -55,7 +55,7 @@ export default function Page({ params }: any) {
         <span className=' text-gray-500 border-2 p-1 rounded-lg'>Category: {blog.category}</span>
         </div>
         
-        <ReactMarkdown className="markdown" children={blog.content} />
+        <ReactMarkdown className="markdown">{blog.content}</ReactMarkdown>
         {/* <p className=' font-medium'>Author~ {blog.author!.username}</p> */}
         <p className=' text-gray-500 text-right pt-4'>Created at:  {formattedDate}</p>
       </div>

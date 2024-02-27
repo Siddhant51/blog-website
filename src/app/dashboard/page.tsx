@@ -7,7 +7,7 @@ import { Toaster, toast} from 'react-hot-toast'
 import moment from 'moment';
 
 
-export default function page() {
+export default function Page() {
     const router = useRouter();
 
     const [blogs, setBlogs] = useState([]);
