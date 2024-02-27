@@ -1,6 +1,6 @@
 "use client"
 
-// Import necessary libraries
+/// Import necessary libraries
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
@@ -52,11 +52,11 @@ export default function Page({ params }: any) {
       <div className=' body w-10/12 p-4 lg:w-7/12'>
         <ProfilePic userData={blog.author}/>
         <div className=' text-right mt-6'>
-          <span className=' text-gray-500 border-2 p-1 rounded-lg'>Category: {blog.category}</span>
+        <span className=' text-gray-500 border-2 p-1 rounded-lg'>Category: {blog.category}</span>
         </div>
         
         <div className="markdown">
-          <ReactMarkdown>{blog.content}</ReactMarkdown>
+          <ReactMarkdown >{blog.content}</ReactMarkdown>
         </div>
         {/* <p className=' font-medium'>Author~ {blog.author!.username}</p> */}
         <p className=' text-gray-500 text-right pt-4'>Created at:  {formattedDate}</p>
