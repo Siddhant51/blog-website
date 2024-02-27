@@ -1,13 +1,11 @@
-"use client"
+'use client'
 
-/// Import necessary libraries
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import moment from 'moment';
 import ProfilePic from '@/app/components/ProfilePic';
 
-// Define the Blog interface
 interface Blog {
   title: string;
   category: string;
@@ -19,7 +17,6 @@ interface Blog {
   createdAt: Date;
 }
 
-// Create the BlogPage component
 export default function Page({ params }: any) {
   const { id } = params;
   const slicedId = id ? (id as string).slice(3) : null;
