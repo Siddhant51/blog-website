@@ -14,7 +14,7 @@ export default function NavBar() {
     const {loggedIn, setLoggedIn} = useAppContext()
 
   useEffect(() => {
-    const v = localStorage.getItem("loggedIn") || false;
+    const v = sessionStorage.getItem("loggedIn") || false;
     setLoggedIn(v);
   }, []);
 
@@ -22,7 +22,7 @@ export default function NavBar() {
         try {
             await axios.get('/api/user/logout')
             toast.success('Logout successful')
-            localStorage.removeItem("loggedIn")
+            sessionStorage.setItem("loggedIn", "false")
             setLoggedIn("")
             router.push('/login')
         } catch (error:any) {

@@ -12,8 +12,8 @@ export default function Page() {
     const {loggedIn, setLoggedIn} = useAppContext();
 
     const [user, setUser] = useState({
-        email: "",
-        password: ""
+        email: "sid@gmail.com",
+        password: "123456"
     });
     const [loading, setLoading] = React.useState(false);
 
@@ -23,7 +23,7 @@ export default function Page() {
             const response = await axios.post("/api/user/login", user);
             console.log("Login success", response.data);
             toast.success(response.data.message);
-            localStorage.setItem("loggedIn", "true")
+            sessionStorage.setItem("loggedIn", "true")
             setLoggedIn("true")
             router.push("/dashboard")
         } catch (error:any) {
