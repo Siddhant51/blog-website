@@ -8,8 +8,9 @@ export async function POST(request: NextRequest) {
   try {
     const reqBody = await request.json();
     const { slicedId } = reqBody;
-    
-    const blog = await Blog.findOne({_id: slicedId}).populate("author");
+
+    const blog = await Blog.findOne({ _id: slicedId }).populate("author");
+    // .populate("comments");
 
     return NextResponse.json({
       message: "Blog data fetched",

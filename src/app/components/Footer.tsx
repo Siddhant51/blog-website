@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import React from 'react';
+import React from "react";
 
 const Footer = () => {
   return (
-    <div className=" absolute w-full bg-slate-300 p-4 text-center text-gray-600">
+    <div className=" absolute w-full bg-slate-300 p-4 text-center text-gray-600 mt-3">
       <p>© 2024 Blog Website</p>
     </div>
   );
